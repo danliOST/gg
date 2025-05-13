@@ -1,0 +1,405 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font for a cleaner look */
+  margin: 0;
+  background-color: #e9ecef;
+  color: #333;
+  line-height: 1.6; /* Added for better readability */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Header Styles */
+header {
+  background-color: #f8f9fa;
+  padding: 15px 0;
+  border-bottom: 1px solid #dee2e6;
+  position: sticky; /* Makes header sticky */
+  top: 0;
+  z-index: 1000; /* Ensures header is above other content */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.logo i {
+  margin-right: 8px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px; /* Increased spacing */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  padding: 5px 0; /* Added padding for easier clicking */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Style for active link (requires JS or manual class for single page) */
+  color: #007bff;
+  border-bottom: 2px solid #007bff; /* Underline effect on hover/active */
+}
+
+/* Main Content & Profile Section Styles */
+main {
+  padding-top: 20px; /* Adjusted padding because of sticky header */
+}
+
+#profile.content-area { /* Ensure profile section specific padding if needed */
+  padding-bottom: 40px;
+}
+
+.profile-card {
+  background-color: #fff;
+  border-radius: 10px; /* Slightly more rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  display: flex;
+  width: 100%;
+  max-width: 1000px; /* Adjusted max-width */
+  margin: 0 auto; /* Center the card */
+  overflow: hidden;
+}
+
+.profile-image {
+  flex: 0 0 35%;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-info {
+  flex: 1;
+  padding: 35px 40px; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-info h2 {
+  margin-top: 0;
+  font-size: 2em; /* Larger name */
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Spacing below name */
+}
+
+.profile-info h2 i {
+  margin-right: 12px;
+  color: #007bff;
+}
+
+.profile-info .subtitle {
+  font-size: 1.05em; /* Slightly larger subtitle */
+  color: #6c757d;
+  margin-bottom: 25px;
+}
+
+.profile-info .bio {
+  font-size: 0.95em;
+  color: #495057;
+  margin-bottom: 30px;
+}
+
+/* General Section Styling (for Experience & Skills) */
+.section-padding {
+  padding: 50px 0; /* Consistent padding for sections */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2em; /* Larger section titles */
+  color: #343a40;
+  margin-bottom: 15px; /* Spacing below title */
+  display: flex; /* To align icon and text */
+  align-items: center;
+  justify-content: center; /* Center icon and text */
+}
+
+.section-title i {
+  margin-right: 12px;
+  color: #007bff; /* Blue icon for section titles */
+  font-size: 0.9em; /* Adjust icon size relative to title */
+  background-color: #e0efff; /* Light blue circular background */
+  padding: 10px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1em;
+  color: #6c757d;
+  margin-bottom: 40px; /* Spacing below subtitle */
+  max-width: 600px; /* Limit width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card base style (for experience, education, skill categories) */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  padding: 25px;
+  margin-bottom: 20px; /* Spacing between cards if stacked vertically */
+}
+
+/* Experience & Education Section Styles */
+.experience-education-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  Gap is not visible in the screenshot for these items, items are full width */
+  gap: 25px;
+}
+
+.experience-item, .education-item {
+  display: flex; /* Icon on left, content on right */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.card-icon {
+  font-size: 1.8em; /* Icon size */
+  color: #007bff; /* Blue icon */
+  margin-right: 20px;
+  padding-top: 5px; /* Align icon with first line of text */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.card-content h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.3em;
+  color: #343a40;
+}
+
+.card-content .company-duration {
+  font-size: 0.95em;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.card-content ul {
+  list-style: disc; /* Default disc bullets */
+  padding-left: 20px; /* Indent bullet points */
+  margin: 0;
+  font-size: 0.9em;
+  color: #495057;
+}
+
+.card-content ul li {
+  margin-bottom: 8px; /* Spacing between bullet points */
+}
+
+/* Skills Section Styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Gap between skill category cards */
+}
+
+.skill-category-card {
+  padding: 20px; /* Slightly less padding for skill cards */
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-category-header i {
+  font-size: 1.5em;
+  color: #007bff; /* Icon color */
+  margin-right: 12px;
+  background-color: #e0efff;
+  padding: 8px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.skill-category-header h4 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #343a40;
+}
+
+.skill-item {
+  margin-bottom: 18px;
+}
+
+.skill-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+  font-weight: 500; /* Make skill name slightly bolder */
+  color: #495057;
+}
+
+.skill-info span.skill-percentage {
+  color: #007bff; /* Blue for percentage */
+  font-weight: bold;
+  /* Initial state for animation */
+  opacity: 0;
+}
+
+.progress-bar-container {
+  background-color: #e9ecef; /* Light grey background for progress bar */
+  border-radius: 5px;
+  height: 12px; /* Height of progress bar */
+  overflow: hidden; /* Ensure progress bar stays within container */
+}
+
+.progress-bar {
+  background-color: #007bff; /* Blue progress */
+  height: 100%;
+  border-radius: 5px;
+  width: 0; /* Initial state for animation */
+  transition: width 1.5s ease-in-out; /* Animation for progress bar */
+}
+
+/* Animation for percentage text */
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.skill-percentage.is-visible {
+  animation: fadeInText 1s ease-in-out forwards;
+}
+
+/* Fade-in effect styles */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below final position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to final position */
+}
+
+/* Skill card fade-in effect */
+.skill-card-fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below final position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skill-card-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to final position */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Target tablets and larger phones */
+  .profile-card {
+      flex-direction: column;
+  }
+  .profile-image {
+      flex-basis: auto;
+      height: 300px; /* Adjust height as needed */
+  }
+  .profile-info {
+      padding: 25px 30px;
+  }
+  .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  header .container {
+      flex-direction: column;
+      align-items: center; /* Center logo and nav on mobile */
+  }
+
+  .logo {
+      margin-bottom: 10px; /* Space below logo on mobile */
+  }
+
+  nav ul {
+      margin-top: 10px;
+      justify-content: center; /* Center nav links */
+      flex-wrap: wrap; /* Allow nav links to wrap */
+  }
+
+  nav ul li {
+      margin: 5px 10px; /* Adjust spacing for wrapped links */
+  }
+
+  .section-title {
+      font-size: 1.8em;
+  }
+  .section-subtitle {
+      font-size: 1em;
+  }
+
+  .skills-grid {
+      grid-template-columns: 1fr; /* Stack skill categories on small screens */
+  }
+}
+
+@media (max-width: 480px) { /* Smaller mobile devices */
+  .profile-info {
+      padding: 20px;
+  }
+  .profile-info h2 {
+      font-size: 1.6em;
+  }
+  .profile-info .subtitle {
+      font-size: 0.95em;
+  }
+  .ai-bio-button {
+      padding: 10px 15px;
+      font-size: 0.85em;
+  }
+  .section-padding {
+      padding: 30px 0;
+  }
+  .card-content h3 {
+      font-size: 1.15em;
+  }
+}
