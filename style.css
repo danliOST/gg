@@ -268,26 +268,28 @@ main {
 }
 
 .skill-info {
-  display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
   font-size: 0.9em;
   font-weight: 500; /* Make skill name slightly bolder */
   color: #495057;
 }
+/* Position the percentage absolutely within its container */
+.skill-info {
+  display: flex;
+}
 
 .skill-info span.skill-percentage {
   color: #007bff; /* Blue for percentage */
   font-weight: bold;
-  /* Initial state for animation */
-  opacity: 0;
 }
 
 .progress-bar-container {
   background-color: #e9ecef; /* Light grey background for progress bar */
-  border-radius: 5px;
+  border-radius: 8px; /* Adjusted border-radius for a softer look */
   height: 12px; /* Height of progress bar */
-  overflow: hidden; /* Ensure progress bar stays within container */
+  overflow: hidden; /* Ensures progress bar stays within container */
+  position: relative; /* Needed for absolute positioning of percentage */
 }
 
 .progress-bar {
@@ -298,11 +300,12 @@ main {
   transition: width 1.5s ease-in-out; /* Animation for progress bar */
 }
 
-/* Animation for percentage text */
+/* Animation for percentage text fade-in */
 @keyframes fadeInText {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 
 .skill-percentage.is-visible {
   animation: fadeInText 1s ease-in-out forwards;
@@ -402,4 +405,14 @@ main {
   .card-content h3 {
       font-size: 1.15em;
   }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8f9fa; /* White background */
+  text-align: center; /* Centered text */
+  padding: 30px 0; /* Appropriate padding */
+  margin-top: 40px; /* Space above the footer */
+  color: #6c757d; /* Color for the text */
+  font-size: 0.9em;
 }
