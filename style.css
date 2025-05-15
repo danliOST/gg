@@ -5,6 +5,14 @@ body {
   background-color: #e9ecef;
   color: #333;
   line-height: 1.6; /* Added for better readability */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .container {
@@ -27,8 +35,18 @@ header {
   position: sticky; /* Makes header sticky */
   top: 0;
   z-index: 1000; /* Ensures header is above other content */
+  transition: background-color 0.3s ease; /* Smooth transition for color */
+  /* Position sticky is used for the header, and we need a pseudo-element for the background blur */
+  position: sticky; 
 }
 
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1; /* Place behind header content */
+  background-color: #f8f9fa; /* Initial background color */
+}
 header .container {
   display: flex;
   justify-content: space-between;
@@ -70,9 +88,19 @@ nav ul li a.active { /* Style for active link (requires JS or manual class for s
   border-bottom: 2px solid #007bff; /* Underline effect on hover/active */
 }
 
+header.scrolled {
+  /* The background is now handled by the ::before pseudo-element */
+  backdrop-filter: blur(5px); /* Apply blur effect to the background */
+  border-bottom: 2px solid #007bff; /* Underline effect on hover/active */
+}
+
 /* Main Content & Profile Section Styles */
 main {
   padding-top: 20px; /* Adjusted padding because of sticky header */
+}
+
+header.scrolled::before {
+  background-color: rgba(248, 249, 250, 0.5); /* More transparent background for the pseudo-element */
 }
 
 #profile.content-area { /* Ensure profile section specific padding if needed */
@@ -178,6 +206,13 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
   padding: 25px;
   margin-bottom: 20px; /* Spacing between cards if stacked vertically */
+}
+
+/* Card hover effect */
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* More intense shadow */
+  transform: translateY(-5px); /* Slight lift effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition for both shadow and transform */
 }
 
 /* Experience & Education Section Styles */
